@@ -1,6 +1,14 @@
 fileFormatVersion: 2
 <<<<<<<< HEAD:Assets/Characters/Dog.meta
+<<<<<<< HEAD
 guid: 9249d2b9f5cd3bb4f9514f3dc59fa0e0
+=======
+<<<<<<< Updated upstream
+guid: 23c61bf5daa17ee4c9c8b5ac4e4d637b
+=======
+guid: adb6b821d8ac70f4ba13572e2149122b
+>>>>>>> Stashed changes
+>>>>>>> dev
 ========
 guid: 58f3b39b7c154854392dc75eed9f3ef7
 >>>>>>>> dev:Assets/Objects.meta
