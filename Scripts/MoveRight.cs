@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class MoveRight : MonoBehaviour
 {
-    public float speed = 5.0f;
-    private float xDestroy = -20.0f;
+    public float speed = 50.0f;
+    private float xDestroy = -7000.0f;
+    
     private Rigidbody objectRb;
     // Start is called before the first frame update
     void Start()
