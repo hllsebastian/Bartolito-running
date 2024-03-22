@@ -10,14 +10,14 @@ public class CubeController : MonoBehaviour
     private void Start()
     {
         playerRb = GetComponent<Rigidbody>();
-        gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
 
     void FixedUpdate()
     {
       
-        if (gameManager.isGameActive && !GamePaused.isPaused)
+        if (gameManager.isGameActive && !gameManager.isGameActive)
         {
             playerRb.AddRelativeForce(Vector3.right * Time.deltaTime * 1000);
         }        
