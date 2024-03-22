@@ -5,10 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public GameObject gameOptions;
-    public GameObject gamePausedCanvas;
+    [SerializeField] private GameObject gamePausedCanvas;
+    [SerializeField] private bool isPaused;
+    private string firstLevel = "SampleScene";
     public bool isGameActive;
-    public  bool isPaused;
 
     private void Update()
     {
@@ -22,8 +22,8 @@ public class GameManager : MonoBehaviour
     {
         isGameActive = true;
         //gameOptions.SetActive(false);
-        
-        SceneManager.LoadScene("SampleScene");
+
+        SceneManager.LoadScene(firstLevel);
         //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
@@ -43,8 +43,8 @@ public class GameManager : MonoBehaviour
             Time.timeScale = 1;
             gamePausedCanvas.SetActive(false);
         }
-    }    
-    
+    }
+
     public void Exit()
     {
         Debug.Log("EXIIITTT");

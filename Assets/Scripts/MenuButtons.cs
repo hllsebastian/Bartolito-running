@@ -5,19 +5,15 @@ using UnityEngine.UI;
 
 public class MenuButtons : MonoBehaviour
 {
-    //private Button button;
     private GameManager gameManager;
     public AudioClip startSound;
     [SerializeField] private SoundManager soundManager;
-    [SerializeField] private AudioSource playerAudio;
+    public AudioSource playerAudio;
 
     void Start()
     {
-        //button = GetComponent<Button>();
-        //button.onClick.AddListener(StartGame);
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         playerAudio = GetComponent<AudioSource>();
-        if (playerAudio == null) Debug.Log("STARRTT AUDIO NULL");
     }
 
     public void StartGame()

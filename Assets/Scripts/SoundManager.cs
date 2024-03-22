@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
-    [SerializeField] private AudioSource mainSound, fxSound;
+    [SerializeField] private AudioSource MusicSource, fxSound;
     //[SerializeField] private AudioClip audioPlay;
     private float volumeSound = 1f;
 

@@ -276,13 +276,13 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 71003675be6f5234c819c96cf609dac0, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.27
   m_Pitch: 1
   Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 70
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -387,15 +387,15 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: ff6afc6518caa01498333f41c099b021, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.38
   m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 100
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -744,7 +744,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af7745dea86414740b094f0f5595a580, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameOptions: {fileID: 202697137}
+  gamePausedCanvas: {fileID: 0}
+  isPaused: 0
   isGameActive: 0
 --- !u!4 &828714097
 Transform:
@@ -1241,7 +1242,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 133
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -1841,7 +1842,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51aef9eedf6fcc64a9c842e55e025c69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainSound: {fileID: 466366042}
+  MusicSource: {fileID: 0}
   fxSound: {fileID: 1394338737}
 --- !u!4 &1827650080
 Transform:

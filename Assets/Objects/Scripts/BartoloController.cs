@@ -7,7 +7,7 @@ public class BartoloController : MonoBehaviour
     private float speed = 10.0f;
     private float zBound = 700;
     private Rigidbody playerRb;
-    //public PowerUp collectedPowerUp;
+    public GameObject collectedPowerUp;
 
     // Start is called before the first frame update
     void Start()
@@ -18,14 +18,14 @@ public class BartoloController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       MovePlayer();
-       ConstrainPlayerPosition();
-        
-        // if (Input.GetKeyDown(KeyCode.Space))
-        // {
-        //   ShootPowerUp();
-        // }
-    } 
+        MovePlayer();
+        ConstrainPlayerPosition();
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            ShootPowerUp();
+        }
+    }
 
     void MovePlayer()
     {
@@ -38,20 +38,20 @@ public class BartoloController : MonoBehaviour
 
     void ConstrainPlayerPosition()
     {
-     if (transform.position.z < -zBound)
-       {
-        transform.position = new Vector3(transform.position.x, transform.position.y, -zBound);
-       }
+        if (transform.position.z < -zBound)
+        {
+            transform.position = new Vector3(transform.position.x, transform.position.y, -zBound);
+        }
 
-     if (transform.position.z > zBound)
-       {
-        transform.position = new Vector3(transform.position.x, transform.position.y, zBound);
-       }
+        if (transform.position.z > zBound)
+        {
+            transform.position = new Vector3(transform.position.x, transform.position.y, zBound);
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.CompareTag("Enemy"))
+        if (collision.gameObject.CompareTag("Enemy"))
         {
             Debug.Log("Player has collided with enemy.");
         }
@@ -60,46 +60,41 @@ public class BartoloController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.CompareTag("Powerup"))
+        if (other.gameObject.CompareTag("Powerup"))
         {
             //collectedPowerUp = other.gameObject;
             Destroy(other.gameObject);
         }
 
-        if(other.gameObject.CompareTag("Egss"))
+        if (other.gameObject.CompareTag("Egss"))
         {
             Destroy(other.gameObject);
         }
 
-        if(other.gameObject.CompareTag("Easteregg"))
+        if (other.gameObject.CompareTag("Easteregg"))
         {
             Destroy(other.gameObject);
         }
     }
-    
-    // private void ShootPowerup()
-        
-    // {
-    //     if (collectedPowerUp != null)
-    //     {
-    //         // Crea una copia del power-up en la posición del jugador
-    //         GameObject powerup = Instantiate(collectedPowerUp, transform.position, Quaternion.identity);
 
-    //         // Añade fuerza al power-up para dispararlo
-    //         Rigidbody rb = powerup.GetComponent<Rigidbody>();
-           
-    //         if (rb != null)
-    //         {
-    //            rb.AddForce(transform.forward * 500);
-    //         }
+    private void ShootPowerUp()
 
-    //     //  Borra el power-up que tenías
-    //         collectedPowerUp = null;
-    //     }
+    {
+        if (collectedPowerUp != null)
+        {
+            // Crea una copia del power-up en la posición del jugador
+            Instantiate(collectedPowerUp, transform.position, Quaternion.identity);
 
+            // Añade fuerza al power-up para dispararlo
+            Rigidbody rb = collectedPowerUp.GetComponent<Rigidbody>();
 
-    // }
+            if (rb != null)
+            {
+                rb.AddForce(transform.forward * 500);
+            }
 
-    
-
+            //  Borra el power-up que tenías
+            collectedPowerUp = null;
+        }
+    }
 }
