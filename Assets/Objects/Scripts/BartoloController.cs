@@ -7,7 +7,7 @@ public class BartoloController : MonoBehaviour
     private float speed = 10.0f;
     private float zBound = 700;
     private Rigidbody playerRb;
-    //public PowerUp collectedPowerUp;
+    public GameObject collectedPowerUp;
 
     // Start is called before the first frame update
     void Start()
@@ -21,10 +21,10 @@ public class BartoloController : MonoBehaviour
        MovePlayer();
        ConstrainPlayerPosition();
         
-        // if (Input.GetKeyDown(KeyCode.Space))
-        // {
-        //   ShootPowerUp();
-        // }
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+          ShootPowerUp();
+        }
     } 
 
     void MovePlayer()
@@ -77,28 +77,28 @@ public class BartoloController : MonoBehaviour
         }
     }
     
-    // private void ShootPowerup()
+     private void ShootPowerUp()
         
-    // {
-    //     if (collectedPowerUp != null)
-    //     {
-    //         // Crea una copia del power-up en la posición del jugador
-    //         GameObject powerup = Instantiate(collectedPowerUp, transform.position, Quaternion.identity);
+     {
+         if (collectedPowerUp != null)
+        {
+            // Crea una copia del power-up en la posición del jugador
+            Instantiate(collectedPowerUp, transform.position, Quaternion.identity);
 
-    //         // Añade fuerza al power-up para dispararlo
-    //         Rigidbody rb = powerup.GetComponent<Rigidbody>();
+            // Añade fuerza al power-up para dispararlo
+            Rigidbody rb = collectedPowerUp.GetComponent<Rigidbody>();
            
-    //         if (rb != null)
-    //         {
-    //            rb.AddForce(transform.forward * 500);
-    //         }
+            if (rb != null)
+            {
+               rb.AddForce(transform.forward * 500);
+            }
 
-    //     //  Borra el power-up que tenías
-    //         collectedPowerUp = null;
-    //     }
+         //  Borra el power-up que tenías
+             collectedPowerUp = null;
+         }
 
 
-    // }
+     }
 
     
 
